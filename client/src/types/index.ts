@@ -39,3 +39,23 @@ export interface ParagraphProps {
   /** Additional data attributes */
   'data-testid'?: string;
 }
+
+// Heading component types
+export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+
+export interface HeadingProps {
+  /** The text content to display in the heading */
+  text: string;
+  /** The heading level (1-6) which determines the semantic HTML tag and styling */
+  level?: HeadingLevel;
+  /** Additional CSS classes to apply */
+  className?: string;
+  /** Text color (defaults to design system primary text color) */
+  color?: string;
+  /** Accessibility label for screen readers */
+  'aria-label'?: string;
+  /** Unique identifier for the heading */
+  id?: string;
+  /** Test identifier for automated testing */
+  'data-testid'?: string;
+}
