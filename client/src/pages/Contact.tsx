@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../components/ui/Button';
+import Heading from '../components/ui/Heading';
 import type { FormData } from '../types/index';
 
 const Contact: React.FC = () => {
@@ -39,8 +40,12 @@ const Contact: React.FC = () => {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-lg mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <p className="text-gray-600">Testing the Button component in a contact form context.</p>
+          <Heading 
+            text="Contact Us"
+            level={1}
+            className="text-gray-900 mb-4"
+          />
+          <p className="text-gray-600">Testing the Button and Heading components in a contact form context.</p>
         </div>
 
         <div className="bg-white shadow rounded-lg p-6">
@@ -92,7 +97,11 @@ const Contact: React.FC = () => {
 
             {/* Button Testing Area */}
             <div className="space-y-4">
-              <h3 className="text-lg font-medium text-gray-800">Form Actions</h3>
+              <Heading 
+                text="Form Actions"
+                level={3}
+                className="text-gray-800"
+              />
               
               {/* Primary Actions */}
               <div className="flex flex-col sm:flex-row gap-3">
@@ -117,7 +126,11 @@ const Contact: React.FC = () => {
 
               {/* Additional Button Tests */}
               <div className="pt-4 border-t border-gray-200">
-                <h4 className="text-sm font-medium text-gray-600 mb-3">Additional Button Tests</h4>
+                <Heading 
+                  text="Additional Button Tests"
+                  level={4}
+                  className="text-gray-600 mb-3"
+                />
                 <div className="grid grid-cols-2 gap-2">
                   <Button
                     text="Cancel"
