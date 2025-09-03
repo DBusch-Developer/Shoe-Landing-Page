@@ -15,8 +15,27 @@ export type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
 };
 
+// Form data types
 export type FormData = {
   name: string;
   email: string;
   message: string;
 };
+
+// Paragraph component types
+export type ParagraphElement = 'p' | 'span' | 'div';
+
+export interface ParagraphProps {
+  /** The text content to display */
+  text: string;
+  /** Additional CSS classes to apply */
+  className?: string;
+  /** HTML element to render as (defaults to 'p') */
+  as?: ParagraphElement;
+  /** Accessibility label for screen readers */
+  'aria-label'?: string;
+  /** Unique identifier for the paragraph */
+  id?: string;
+  /** Additional data attributes */
+  'data-testid'?: string;
+}
