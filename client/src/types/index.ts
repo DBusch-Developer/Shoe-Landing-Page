@@ -59,3 +59,43 @@ export interface HeadingProps {
   /** Test identifier for automated testing */
   'data-testid'?: string;
 }
+
+// Card component types
+export interface CardProps {
+  /** Card title/heading */
+  title: string;
+  /** Optional card description */
+  description?: string;
+  /** Optional price display */
+  price?: string;
+  /** Optional image URL */
+  image?: string;
+  /** Optional icon at top or left */
+  icon?: React.ReactNode;
+  /** Available color options */
+  colors?: string[];
+  /** Selected color */
+  selectedColor?: string;
+  /** Color selection callback */
+  onColorSelect?: (color: string) => void;
+  /** Primary action button */
+  primaryAction?: {
+    text: string;
+    onClick: () => void;
+  };
+  /** Secondary action button */
+  secondaryAction?: {
+    text: string;
+    onClick: () => void;
+  };
+  /** Additional CSS classes */
+  className?: string;
+  /** Card layout orientation */
+  orientation?: 'vertical' | 'horizontal';
+  /** Click handler for entire card */
+  onClick?: () => void;
+  /** Accessibility label */
+  'aria-label'?: string;
+  /** Test identifier */
+  'data-testid'?: string;
+}
