@@ -1,5 +1,5 @@
 // Page navigation types
-export type PageName = 'home' | 'contact' | 'about' | 'product';
+export type PageName = 'home' | 'contact' | 'about' | 'product' | 'footer-demo';
 
 // Button component types
 export type ButtonVariant = 'primary' | 'secondary';
@@ -119,4 +119,46 @@ export interface NavbarProps {
   onLogoClick?: () => void;
   /** Sign in button handler */
   onSignInClick?: () => void;
+}
+
+// Footer component types
+export interface FooterLink {
+  label: string;
+  href?: string;
+  onClick?: () => void;
+}
+
+export interface FooterLinkSection {
+  title: string;
+  links: FooterLink[];
+}
+
+export interface FooterSocialLink {
+  name: string;
+  href?: string;
+  onClick?: () => void;
+  icon: React.ReactNode;
+}
+
+export interface FooterContactInfo {
+  email?: string;
+  phone?: string;
+  address?: string;
+}
+
+export interface FooterProps {
+  /** Additional CSS classes */
+  className?: string;
+  /** Company name for branding */
+  companyName?: string;
+  /** Copyright year */
+  copyrightYear?: number;
+  /** Contact information */
+  contactInfo?: FooterContactInfo;
+  /** Useful links sections */
+  linkSections?: FooterLinkSection[];
+  /** Social media links */
+  socialLinks?: FooterSocialLink[];
+  /** Newsletter signup handler */
+  onNewsletterSignup?: (email: string) => void;
 }
