@@ -1,5 +1,5 @@
 // Page navigation types
-export type PageName = 'home' | 'contact';
+export type PageName = 'home' | 'contact' | 'about' | 'product';
 
 // Button component types
 export type ButtonVariant = 'primary' | 'secondary';
@@ -98,4 +98,25 @@ export interface CardProps {
   'aria-label'?: string;
   /** Test identifier */
   'data-testid'?: string;
+}
+
+// Navbar component types
+export interface NavbarProps {
+  /** Additional CSS classes */
+  className?: string;
+  /** Current active page for styling */
+  activePage?: string;
+  /** Navigation items */
+  navItems?: Array<{
+    label: string;
+    href?: string;
+    onClick?: () => void;
+    isActive?: boolean;
+  }>;
+  /** Logo text */
+  logoText?: string;
+  /** Logo click handler */
+  onLogoClick?: () => void;
+  /** Sign in button handler */
+  onSignInClick?: () => void;
 }
