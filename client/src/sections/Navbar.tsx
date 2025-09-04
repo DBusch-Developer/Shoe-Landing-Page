@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from './Button';
-import Heading from './Heading';
+import Button from '../components/ui/Button';
+import Heading from '../components/ui/Heading';
 
 export interface NavbarProps {
   /** Additional CSS classes */
