@@ -2,29 +2,33 @@ import Button from "../components/ui/Button";
 import Paragraph from "../components/ui/Paragraph";
 import Heading from "../components/ui/Heading";
 import { Link } from "react-router-dom";
-
-interface FooterProps {
-  className?: string;
-}
+import type {
+  FooterProps,
+  SocialPlatform,
+  FooterLinkName,
+  FooterLinkClickHandler,
+  SocialClickHandler,
+  NewsletterSignupHandler,
+} from "../types/index";
 
 const Footer: React.FC<FooterProps> = ({ className = "" }) => {
-  const currentYear = new Date().getFullYear();
+  const currentYear: number = new Date().getFullYear();
 
   // Handle link clicks
-  const handleLinkClick = (linkName: string) => {
+  const handleLinkClick: FooterLinkClickHandler = (linkName) => {
     console.log(`Footer link clicked: ${linkName}`);
     // In a real app, these would navigate to actual pages
     alert(`Navigate to ${linkName}`);
   };
 
   // Handle social media clicks
-  const handleSocialClick = (platform: string) => {
+  const handleSocialClick: SocialClickHandler = (platform) => {
     console.log(`Social media clicked: ${platform}`);
     alert(`Opening ${platform}...`);
   };
 
   // Newsletter subscription
-  const handleNewsletterSignup = () => {
+  const handleNewsletterSignup: NewsletterSignupHandler = () => {
     console.log("Newsletter signup clicked");
     alert("Thank you for subscribing to our newsletter!");
   };
@@ -74,24 +78,28 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               <Link
                 to="/"
                 className="block text-gray-300 hover:text-white transition-colors duration-200 text-left"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Home
               </Link>
               <Link
+                to="/about"
+                className="block text-gray-300 hover:text-white transition-colors duration-200 text-left"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                About
+              </Link>
+              <Link
                 to="/products"
                 className="block text-gray-300 hover:text-white transition-colors duration-200 text-left"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Products
               </Link>
               <Link
-                to="/about"
-                className="block text-gray-300 hover:text-white transition-colors duration-200 text-left"
-              >
-                About Us
-              </Link>
-              <Link
                 to="/contact"
                 className="block text-gray-300 hover:text-white transition-colors duration-200 text-left"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Contact
               </Link>

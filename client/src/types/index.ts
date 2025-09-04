@@ -100,7 +100,7 @@ export interface CardProps {
   'data-testid'?: string;
 }
 
-// Navbar component types (simplified for React Router)
+// Navbar component types 
 export interface NavbarProps {
   /** Additional CSS classes */
   className?: string;
@@ -111,43 +111,43 @@ export interface NavbarProps {
 }
 
 // Footer component types
-export interface FooterLink {
-  label: string;
-  href?: string;
-  onClick?: () => void;
-}
-
-export interface FooterLinkSection {
-  title: string;
-  links: FooterLink[];
-}
-
-export interface FooterSocialLink {
-  name: string;
-  href?: string;
-  onClick?: () => void;
-  icon: React.ReactNode;
-}
-
-export interface FooterContactInfo {
-  email?: string;
-  phone?: string;
-  address?: string;
-}
-
 export interface FooterProps {
-  /** Additional CSS classes */
   className?: string;
-  /** Company name for branding */
-  companyName?: string;
-  /** Copyright year */
-  copyrightYear?: number;
-  /** Contact information */
-  contactInfo?: FooterContactInfo;
-  /** Useful links sections */
-  linkSections?: FooterLinkSection[];
-  /** Social media links */
-  socialLinks?: FooterSocialLink[];
-  /** Newsletter signup handler */
-  onNewsletterSignup?: (email: string) => void;
+}
+
+// Social media platforms
+export type SocialPlatform = 'Facebook' | 'Twitter' | 'Instagram' | 'LinkedIn';
+
+// Footer link names (for the handleLinkClick function)
+export type FooterLinkName = 
+  | 'Size Guide'
+  | 'FAQ'
+  | 'Shipping Info'
+  | 'Returns'
+  | 'Customer Service'
+  | 'Track Order'
+  | 'Privacy Policy'
+  | 'Terms of Service'
+  | 'Cookie Policy'
+  | 'Accessibility';
+
+// Handler function types
+export type FooterLinkClickHandler = (linkName: FooterLinkName) => void;
+export type SocialClickHandler = (platform: SocialPlatform) => void;
+export type NewsletterSignupHandler = () => void;
+
+// Newsletter form data
+export interface NewsletterFormData {
+  email: string;
+}
+
+// Footer section data structure 
+export interface FooterSection {
+  title: string;
+  items: Array<{
+    label: string;
+    type: 'link' | 'button';
+    href?: string;
+    action?: string;
+  }>;
 }
