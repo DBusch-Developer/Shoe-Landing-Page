@@ -100,23 +100,12 @@ export interface CardProps {
   'data-testid'?: string;
 }
 
-// Navbar component types
+// Navbar component types (simplified for React Router)
 export interface NavbarProps {
   /** Additional CSS classes */
   className?: string;
-  /** Current active page for styling */
-  activePage?: string;
-  /** Navigation items */
-  navItems?: Array<{
-    label: string;
-    href?: string;
-    onClick?: () => void;
-    isActive?: boolean;
-  }>;
   /** Logo text */
   logoText?: string;
-  /** Logo click handler */
-  onLogoClick?: () => void;
   /** Sign in button handler */
   onSignInClick?: () => void;
 }

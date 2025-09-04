@@ -1,52 +1,39 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Heading from '../components/ui/Heading';
 
 export interface NavbarProps {
   /** Additional CSS classes */
   className?: string;
-  /** Current active page for styling */
-  activePage?: string;
-  /** Navigation items */
-  navItems?: Array<{
-    label: string;
-    href?: string;
-    onClick?: () => void;
-    isActive?: boolean;
-  }>;
   /** Logo text */
   logoText?: string;
-  /** Logo click handler */
-  onLogoClick?: () => void;
   /** Sign in button handler */
   onSignInClick?: () => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
   className = '',
-  activePage,
-  navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Product', href: '#product' },
-    { label: 'Contact', href: '#contact' }
-  ],
   logoText = 'ShoeStyle',
-  onLogoClick,
   onSignInClick,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Navigation items with their paths
+  const navItems = [
+    { label: 'About', path: '/about' },
+    { label: 'Products', path: '/products' },
+    { label: 'Contact', path: '/contact' }
+  ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleNavItemClick = (item: typeof navItems[0]) => {
+  const handleNavItemClick = () => {
     // Close mobile menu when item is clicked
     setIsMobileMenuOpen(false);
-    
-    if (item.onClick) {
-      item.onClick();
-    }
   };
 
   const handleSignInClick = () => {
@@ -56,14 +43,19 @@ const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
+  // Check if current path matches nav item path
+  const isActiveLink = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className={`bg-white shadow-sm border-b border-gray-200 ${className}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button
-              onClick={onLogoClick}
+            <Link
+              to="/"
               className="flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009488] rounded-md p-1 -ml-1"
               aria-label="ShoeStyle home"
             >
@@ -72,26 +64,26 @@ const Navbar: React.FC<NavbarProps> = ({
                 level={1}
                 className="text-2xl font-bold text-gray-900 hover:text-[#009488] transition-colors duration-200"
               />
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {/* Navigation Links */}
             <div className="flex space-x-8">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  onClick={item.onClick ? (e) => {
-                    e.preventDefault();
-                    handleNavItemClick(item);
-                  } : undefined}
-                  className="text-[#64748B] font-medium text-base leading-none hover:text-[#D59488] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009488] focus:text-[#D59488] transition-colors duration-200 py-2 px-1"
-                  aria-current={item.isActive || activePage === item.label.toLowerCase() ? 'page' : undefined}
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`font-medium text-base leading-none hover:text-[#009488] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009488] focus:text-[#009488] transition-colors duration-200 py-2 px-1 ${
+                    isActiveLink(item.path)
+                      ? 'text-[#009488] border-b-2 border-[#009488]'
+                      : 'text-[#64748B]'
+                  }`}
+                  aria-current={isActiveLink(item.path) ? 'page' : undefined}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -155,19 +147,20 @@ const Navbar: React.FC<NavbarProps> = ({
           id="mobile-menu"
         >
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-            {navItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                onClick={item.onClick ? (e) => {
-                  e.preventDefault();
-                  handleNavItemClick(item);
-                } : undefined}
-                className="text-[#64748B] hover:text-[#D59488] hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#009488]"
-                aria-current={item.isActive || activePage === item.label.toLowerCase() ? 'page' : undefined}
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={handleNavItemClick}
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#009488] ${
+                  isActiveLink(item.path)
+                    ? 'text-[#009488] bg-gray-50 font-semibold'
+                    : 'text-[#64748B] hover:text-[#009488] hover:bg-gray-50'
+                }`}
+                aria-current={isActiveLink(item.path) ? 'page' : undefined}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="pt-2">
               <Button
