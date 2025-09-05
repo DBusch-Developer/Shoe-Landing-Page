@@ -2,6 +2,13 @@
 
 A modern, responsive e-commerce landing page for premium athletic footwear built with React, TypeScript, and Tailwind CSS. This project showcases a complete shoe retail website with product catalog, company information, and customer engagement features.
 
+## 🔗 Repository
+
+**GitHub Repository:** [https://github.com/DBusch-Developer/Shoe-Landing-Page]
+
+📋 **Quick Links:**
+- [Live Demo](#) ([https://shoe-landing-page-u213-acd9xrial-diana-buschs-projects.vercel.app/])
+
 ## 🚀 Features
 
 ### Core Pages
