@@ -3,6 +3,13 @@ import Heading from '../components/ui/Heading';
 import Paragraph from '../components/ui/Paragraph';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import runningpro from '../assets/images/shoes/running-pro.jpg';
+import casualcomfort from '../assets/images/shoes/casual-comfort.webp';
+import formalelite from '../assets/images/shoes/formal-elite.jpg';
+import sportmax from '../assets/images/shoes/sport-max.jpg';
+import urbanwalker from '../assets/images/shoes/urban-walker.jpg';
+import adventureboot from '../assets/images/shoes/adventure-boot.webp';
+import limitededition from '../assets/images/shoes/limited-edition-runner.jpg';
 
 const Product: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -29,7 +36,7 @@ const Product: React.FC = () => {
       title: 'Running Pro X1',
       description: 'Premium running shoes with advanced cushioning technology for professional athletes.',
       price: '$159.99',
-      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop&crop=center',
+      image: runningpro,
       category: 'running',
       colors: ['Blue', 'Black', 'White', 'Red'],
       features: ['Lightweight', 'Breathable', 'Anti-slip']
@@ -39,7 +46,7 @@ const Product: React.FC = () => {
       title: 'Casual Comfort',
       description: 'Everyday sneakers that blend style and comfort for daily wear.',
       price: '$89.99',
-      image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop&crop=center',
+      image: casualcomfort,
       category: 'casual',
       colors: ['White', 'Gray', 'Navy', 'Beige'],
       features: ['All-day comfort', 'Versatile style', 'Durable']
@@ -49,7 +56,7 @@ const Product: React.FC = () => {
       title: 'Formal Elite',
       description: 'Handcrafted leather dress shoes perfect for business and formal occasions.',
       price: '$249.99',
-      image: 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400&h=300&fit=crop&crop=center',
+      image: formalelite,
       category: 'formal',
       colors: ['Black', 'Brown', 'Dark Brown'],
       features: ['Premium leather', 'Handcrafted', 'Classic design']
@@ -59,7 +66,7 @@ const Product: React.FC = () => {
       title: 'Sport Max',
       description: 'High-performance athletic shoes designed for intense training and sports.',
       price: '$199.99',
-      image: 'https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=400&h=300&fit=crop&crop=center',
+      image: sportmax,
       category: 'sport',
       colors: ['Red', 'Blue', 'Black', 'White'],
       features: ['High performance', 'Energy return', 'Stability']
@@ -69,7 +76,7 @@ const Product: React.FC = () => {
       title: 'Urban Walker',
       description: 'Stylish walking shoes perfect for city exploration and daily commutes.',
       price: '$119.99',
-      image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=400&h=300&fit=crop&crop=center',
+      image: urbanwalker,
       category: 'casual',
       colors: ['Gray', 'Black', 'White', 'Tan'],
       features: ['Comfortable sole', 'Urban style', 'All-day wear']
@@ -79,7 +86,7 @@ const Product: React.FC = () => {
       title: 'Adventure Boot',
       description: 'Rugged hiking boots built for outdoor adventures and challenging terrain.',
       price: '$189.99',
-      image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882400?w=400&h=300&fit=crop&crop=center',
+      image: adventureboot,
       category: 'sport',
       colors: ['Brown', 'Black', 'Olive'],
       features: ['Waterproof', 'Durable', 'Traction grip']
@@ -260,7 +267,7 @@ const Product: React.FC = () => {
             title="Limited Edition Runner"
             description="Our most advanced running shoe featuring cutting-edge technology and exclusive colorways. Limited quantities available - perfect for serious athletes who demand the best performance."
             price="$299.99"
-            image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=300&fit=crop&crop=center"
+            image={limitededition}
             orientation="horizontal"
             colors={['Platinum', 'Gold', 'Rose Gold']}
             selectedColor="Platinum"
