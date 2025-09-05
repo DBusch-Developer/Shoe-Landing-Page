@@ -4,8 +4,6 @@ import Heading from "../components/ui/Heading";
 import { Link } from "react-router-dom";
 import type {
   FooterProps,
-  SocialPlatform,
-  FooterLinkName,
   FooterLinkClickHandler,
   SocialClickHandler,
   NewsletterSignupHandler,
