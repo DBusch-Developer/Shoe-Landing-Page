@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="flex-shrink-0">
             <Link
               to="/"
-              className="flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009488] rounded-md p-1 -ml-1"
+              className="flex items-center rounded-md p-1 -ml-1"
               aria-label="ShoeStyle home"
             >
               <Heading
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`font-medium text-base leading-none hover:text-[#009488] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#009488] focus:text-[#009488] transition-colors duration-200 py-2 px-1 ${
+                  className={`font-medium text-base leading-none hover:text-[#009488] focus:text-[#009488] transition-colors duration-200 py-2 px-1 ${
                     isActiveLink(item.path)
                       ? 'text-[#009488] border-b-2 border-[#009488]'
                       : 'text-[#64748B]'
