@@ -146,7 +146,7 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - FIXED */}
         <section className="bg-gradient-to-r from-[#009488] to-[#0C827A] rounded-2xl p-8 text-white text-center">
           <Heading 
             text="Join Our Journey"
@@ -161,17 +161,17 @@ const About: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               text="View Careers"
-              variant="secondary"
+              variant="primary"
               size="lg"
               onClick={handleJoinTeam}
-              className="bg-white text-[#009488] hover:bg-gray-100"
+              className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-[#009488] border-2"
             />
             <Button
               text="Contact Us"
-              variant="secondary"
+              variant="primary"
               size="lg"
               onClick={() => alert('Navigating to contact page...')}
-              className="border-white text-white hover:bg-white hover:text-[#009488]"
+              className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-[#009488] border-2"
             />
           </div>
         </section>
