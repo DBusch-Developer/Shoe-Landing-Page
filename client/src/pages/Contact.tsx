@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import Heading from "../components/ui/Heading";
@@ -22,11 +22,6 @@ const Contact: React.FC = () => {
     setFormData({ name: "", email: "", message: "" });
     console.log("Form reset");
     alert("Form has been reset!");
-  };
-
-  const handleCancel = () => {
-    console.log("Form cancelled");
-    alert("Form cancelled!");
   };
 
   const handleInputChange = (
