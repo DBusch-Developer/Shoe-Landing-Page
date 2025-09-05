@@ -100,6 +100,52 @@ export interface CardProps {
   'data-testid'?: string;
 }
 
+// Product types (extracted from Features.tsx)
+export interface Product {
+  /** Unique identifier for the product */
+  id: string;
+  /** Product name/title */
+  title: string;
+  /** Product description */
+  description: string;
+  /** Product price as formatted string */
+  price: string;
+  /** Product image URL */
+  image: string;
+  /** Available color options */
+  colors: string[];
+  /** Default selected color */
+  defaultColor: string;
+}
+
+// Feature types (extracted from Features.tsx)
+export interface Feature {
+  /** Unique identifier for the feature */
+  id: string;
+  /** Feature title */
+  title: string;
+  /** Feature description */
+  description: string;
+  /** Feature icon component */
+  icon: React.ReactNode;
+}
+
+// Product action handlers
+export type ProductActionHandler = (productName: string) => void;
+export type ColorSelectHandler = (productId: string, color: string) => void;
+
+// Features component types (extracted from Features.tsx)
+export interface FeaturesProps {
+  /** Section title */
+  title?: string;
+  /** Section subtitle/description */
+  subtitle?: string;
+  /** Additional CSS classes */
+  className?: string;
+  /** Test identifier */
+  'data-testid'?: string;
+}
+
 // Navbar component types 
 export interface NavbarProps {
   /** Additional CSS classes */
