@@ -1,4 +1,3 @@
-import React from 'react';
 import type { HeadingProps } from '../../types';
 import { getHeadingClasses, getHeadingStyles } from '../../utils/classNames';
 
@@ -7,6 +6,7 @@ const Heading: React.FC<HeadingProps> = ({
   level = 1,
   className = '',
   color = '#1E293B',
+  style = {},
   'aria-label': ariaLabel,
   id,
   'data-testid': testId,
@@ -16,14 +16,18 @@ const Heading: React.FC<HeadingProps> = ({
   const currentLevelStyles = getHeadingStyles(level);
   const headingClasses = getHeadingClasses(level, className);
   
+  // Combine default styles with custom styles
+  const combinedStyles: React.CSSProperties = {
+    color,
+    fontWeight: currentLevelStyles.weight,
+    lineHeight: currentLevelStyles.lineHeight,
+    ...style // Custom styles override defaults
+  };
+  
   // Common props to apply to any heading element
   const elementProps = {
     className: headingClasses,
-    style: { 
-      color,
-      fontWeight: currentLevelStyles.weight,
-      lineHeight: currentLevelStyles.lineHeight 
-    },
+    style: combinedStyles,
     'aria-label': ariaLabel,
     id,
     'data-testid': testId,
@@ -45,7 +49,7 @@ const Heading: React.FC<HeadingProps> = ({
     case 6:
       return <h6 {...elementProps}>{text}</h6>;
     default:
-      // Fallback to h1 for invalid levels, but this shouldn't happen with proper TypeScript typing
+      // Fallback to h1 for invalid levels
       return <h1 {...elementProps}>{text}</h1>;
   }
 };

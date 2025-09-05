@@ -3,36 +3,13 @@ import Heading from "../components/ui/Heading";
 import Paragraph from "../components/ui/Paragraph";
 import Button from "../components/ui/Button";
 import heroimage from "../assets/images/hero/hero-image.webp";
-
-export interface HeroSectionProps {
-  /** Main heading text */
-  heading: string;
-  /** Subtitle/description text */
-  subtitle: string;
-  /** Primary call-to-action button */
-  primaryButton: {
-    text: string;
-    onClick: () => void;
-  };
-  /** Optional secondary button */
-  secondaryButton?: {
-    text: string;
-    onClick: () => void;
-  };
-  /** Background image from /assets */
-  backgroundImage?: string;
-  /** Additional CSS classes */
-  className?: string;
-  /** Test identifier */
-  "data-testid"?: string;
-}
+import type { HeroSectionProps } from "../types";
 
 const Hero: React.FC<HeroSectionProps> = ({
   heading,
   subtitle,
   primaryButton,
   secondaryButton,
-  backgroundImage,
   className = "",
   "data-testid": testId,
 }) => {
