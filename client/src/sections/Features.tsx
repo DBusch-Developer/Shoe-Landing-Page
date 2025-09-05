@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Card from '../components/ui/Card';
 import Heading from '../components/ui/Heading';
 import Paragraph from '../components/ui/Paragraph';
+import aircomfortpro from '../assets/images/shoes/air-comfort-pro.jpg';
+import trailexplorer from '../assets/images/shoes/trail-explorer.webp';
+import urbanclassic from '../assets/images/shoes/urban-classic.jpg';
 
 // Import types from centralized types file
 import type { 
@@ -26,7 +29,7 @@ const Features: React.FC<FeaturesProps> = ({
       title: 'Air Comfort Pro',
       description: 'Lightweight running shoes with enhanced cushioning for maximum comfort.',
       price: '$129.99',
-      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop&crop=center',
+      image: aircomfortpro,
       colors: ['Black', 'White', 'Red'],
       defaultColor: 'Black'
     },
@@ -35,8 +38,8 @@ const Features: React.FC<FeaturesProps> = ({
       title: 'Trail Explorer',
       description: 'Rugged hiking boots designed for outdoor adventures and all-terrain performance.',
       price: '$189.99',
-      image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882400?w=400&h=300&fit=crop&crop=center',
-      colors: ['Brown', 'Black', 'Green'],
+      image: trailexplorer,
+      colors: ['Brown', 'Pink', 'Orange'],
       defaultColor: 'Green'
     },
     {
@@ -44,8 +47,8 @@ const Features: React.FC<FeaturesProps> = ({
       title: 'Urban Classic',
       description: 'Timeless sneakers that blend style and comfort for everyday wear in the city.',
       price: '$89.99',
-      image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop&crop=center',
-      colors: ['White', 'Black', 'Gray', 'Navy'],
+      image: urbanclassic,
+      colors: ['White', 'Black', 'Yellow', 'Navy'],
       defaultColor: 'White'
     }
   ];

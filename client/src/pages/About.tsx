@@ -3,6 +3,9 @@ import Heading from '../components/ui/Heading';
 import Paragraph from '../components/ui/Paragraph';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import sarahjohnson from '../assets/images/employees/sarah-johnson.jpg';
+import michaelchen from '../assets/images/employees/michael-chen.jpg';
+import emilyrodriguez from '../assets/images/employees/emily-rodriguez.jpg';
 
 const About: React.FC = () => {
   const handleLearnMore = () => {
@@ -111,7 +114,7 @@ const About: React.FC = () => {
             <Card
               title="Sarah Johnson"
               description="Founder & CEO"
-              image="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=400&h=400&fit=crop&crop=face"
+              image={sarahjohnson}
               primaryAction={{
                 text: 'View Profile',
                 onClick: () => alert('Sarah Johnson profile')
@@ -122,7 +125,7 @@ const About: React.FC = () => {
             <Card
               title="Michael Chen"
               description="Head of Design"
-              image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+              image={michaelchen}
               primaryAction={{
                 text: 'View Profile',
                 onClick: () => alert('Michael Chen profile')
@@ -133,7 +136,7 @@ const About: React.FC = () => {
             <Card
               title="Emily Rodriguez"
               description="Sustainability Director"
-              image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+              image={emilyrodriguez}
               primaryAction={{
                 text: 'View Profile',
                 onClick: () => alert('Emily Rodriguez profile')

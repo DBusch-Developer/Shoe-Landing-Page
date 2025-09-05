@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "../components/ui/Heading";
 import Paragraph from "../components/ui/Paragraph";
 import Button from "../components/ui/Button";
-import heroimage from "../assets/hero-image.webp";
+import heroimage from "../assets/images/hero/hero-image.webp";
 
 export interface HeroSectionProps {
   /** Main heading text */
