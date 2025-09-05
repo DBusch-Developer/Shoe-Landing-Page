@@ -285,7 +285,7 @@ const Product: React.FC = () => {
           />
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - FIXED */}
         <section className="bg-gradient-to-r from-[#009488] to-[#0C827A] rounded-2xl p-8 text-white text-center">
           <Heading 
             text="Can't Find What You're Looking For?"
@@ -300,17 +300,17 @@ const Product: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               text="Contact Expert"
-              variant="secondary"
+              variant="primary"
               size="lg"
               onClick={() => alert('Connecting you with a shoe expert...')}
-              className="bg-white text-[#009488] hover:bg-gray-100"
+              className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-[#009488] border-2"
             />
             <Button
               text="Custom Order"
-              variant="secondary"
+              variant="primary"
               size="lg"
               onClick={() => alert('Custom shoe order coming soon!')}
-              className="border-white text-white hover:bg-white hover:text-[#009488]"
+              className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-[#009488] border-2"
             />
           </div>
         </section>
