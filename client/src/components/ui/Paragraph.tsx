@@ -1,22 +1,10 @@
-import React from 'react';
-import type { ParagraphProps, ParagraphElement } from '../../types';
+import type { ParagraphProps } from '../../types';
 
-/**
- * Reusable Paragraph component for standardized body text
- * 
- * Features:
- * - Flexible element rendering (p, span, div)
- * - Custom styling support via className
- * - Accessibility best practices
- * - TypeScript support
- * 
- * @param props - ParagraphProps
- * @returns JSX.Element
- */
 const Paragraph: React.FC<ParagraphProps> = ({
   text,
   className = '',
   as = 'p',
+  style = {},
   'aria-label': ariaLabel,
   id,
   'data-testid': testId,
@@ -33,6 +21,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
   // Common props to apply to any element
   const elementProps = {
     className: combinedClasses,
+    style, // Apply custom styles
     'aria-label': ariaLabel,
     id,
     'data-testid': testId,

@@ -32,6 +32,8 @@ export interface ParagraphProps {
   className?: string;
   /** HTML element to render as (defaults to 'p') */
   as?: ParagraphElement;
+  /** Inline styles object */
+  style?: React.CSSProperties;
   /** Accessibility label for screen readers */
   'aria-label'?: string;
   /** Unique identifier for the paragraph */
@@ -52,6 +54,8 @@ export interface HeadingProps {
   className?: string;
   /** Text color (defaults to design system primary text color) */
   color?: string;
+  /** Inline styles object */
+  style?: React.CSSProperties;
   /** Accessibility label for screen readers */
   'aria-label'?: string;
   /** Unique identifier for the heading */
@@ -100,7 +104,7 @@ export interface CardProps {
   'data-testid'?: string;
 }
 
-// Product types (extracted from Features.tsx)
+// Product types
 export interface Product {
   /** Unique identifier for the product */
   id: string;
@@ -118,7 +122,7 @@ export interface Product {
   defaultColor: string;
 }
 
-// Feature types (extracted from Features.tsx)
+// Feature types
 export interface Feature {
   /** Unique identifier for the feature */
   id: string;
@@ -134,7 +138,7 @@ export interface Feature {
 export type ProductActionHandler = (productName: string) => void;
 export type ColorSelectHandler = (productId: string, color: string) => void;
 
-// Features component types (extracted from Features.tsx)
+// Features component types
 export interface FeaturesProps {
   /** Section title */
   title?: string;
@@ -196,4 +200,28 @@ export interface FooterSection {
     href?: string;
     action?: string;
   }>;
+}
+
+// Hero section component types
+export interface HeroSectionProps {
+  /** Main heading text */
+  heading: string;
+  /** Subtitle/description text */
+  subtitle: string;
+  /** Primary call-to-action button */
+  primaryButton: {
+    text: string;
+    onClick: () => void;
+  };
+  /** Optional secondary button */
+  secondaryButton?: {
+    text: string;
+    onClick: () => void;
+  };
+  /** Background image from /assets */
+  backgroundImage?: string;
+  /** Additional CSS classes */
+  className?: string;
+  /** Test identifier */
+  "data-testid"?: string;
 }
